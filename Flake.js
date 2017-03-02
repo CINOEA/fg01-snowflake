@@ -10,6 +10,13 @@ var N = 0;
 var lineLenght = 200;
 var sky = canvas.getContext('2d');
 var deg = Math.PI / 180;
+var invertF = 1;
+
+function invert(){
+	invertF = invertF * (-1);
+	inputN();
+}
+
 function leg(n,len){
 	sky.save();
 	if(n == 0)
@@ -19,11 +26,11 @@ function leg(n,len){
 	else {
 		sky.scale(1/3,1/3);
 		leg(n-1,len);
-		sky.rotate(60*deg);
+		sky.rotate(60*deg*invertF);
 		leg(n-1,len);
-		sky.rotate(-120*deg);
+		sky.rotate(-120*deg*invertF);
 		leg(n-1,len);
-		sky.rotate(60*deg);
+		sky.rotate(60*deg*invertF);
 		leg(n-1,len);
 	}
 	sky.restore();
@@ -62,7 +69,9 @@ function inputN() {
 			N = 0;
 		}
 		if(N!=(-1))
+		{
 			drawFlake((canvas.width-lineLenght)/2,(canvas.height+(lineLenght*2)/3)/2,lineLenght,N,"black","white");
+		}
 		else
 			alert("N ЗАФИКСИРОВАННО КАК НОЛЬ");
 }
