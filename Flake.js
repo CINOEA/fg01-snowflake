@@ -58,7 +58,7 @@ function inputN() {
 		if(isNaN(parseInt(document.getElementById("inputN").value))==false)
 			N = Math.abs(parseInt(document.getElementById("inputN").value))-1;
 		else {
-			alert("НЕОБХОДИМО ВВЕСТИ ЧИСЛЕННОЕ ЗНАЧЕНИЕ N\nЗНЧЕНИЕ N БУДЕТ ИСТАЛКОВАНО КАК ЕДИНИЦА");
+			alert("НЕОБХОДИМО ВВЕСТИ ЧИСЛЕННОЕ ЗНАЧЕНИЕ N\nЗНАЧЕНИЕ N БУДЕТ ИСТАЛКОВАНО КАК ЕДИНИЦА");
 			N = 0;
 		}
 		if(N!=(-1))
